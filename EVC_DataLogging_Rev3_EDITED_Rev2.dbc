@@ -1,0 +1,975 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Team_RPi Logger Team_ADAS Team_PSC iPDS_Master iPDS_Slave1 iPDS_Slave2 iPDS_Slave3 iPDSC iPDS_HMI
+VAL_TABLE_ CAVFeatureStates 3 "Unavalible (Faulted)" 2 "Active/In control" 1 "Standby" 0 "Not active" ;
+VAL_TABLE_ SwitchStatus 1 "Switch On" 0 "Switch Off" ;
+VAL_TABLE_ ClutchStateValTable 1 "Clutch Closed" 0 "Clutch Open" ;
+VAL_TABLE_ PRNDLValTable 7 "reserved" 6 "reserved" 5 "ServiceMode" 4 "Low" 3 "Drive" 2 "Neutral" 1 "Reverse" 0 "Park" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ CAVSystemDemandedAxleTorque : 0|16@1- (1,0) [-32768|32767] "Nm" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+ SG_ TrkObj_Heading : 0|11@1- (0.125,0) [-128|127.875] "" Vector__XXX
+ SG_ TrkObj_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 0|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 0|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 0|11@1+ (0.125,0) [0|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 0|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 0|9@1- (0.125,0) [-32|31.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|9@1- (0.125,0) [-32|31.875] "m" Vector__XXX
+
+BO_ 1877 CommFault_RPi: 1 Team_RPi
+ SG_ LossComms_RPi_LnS : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_PSC
+
+BO_ 1876 EDSActiveFault: 1 Team_PSC
+ SG_ EDS_R_EDU_Emerg : 3|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ EDS_F_EDU_Emerg : 2|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ EDS_VICM_Shtdown : 1|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ EDS_ESTOP : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+
+BO_ 1875 CommFault_PSC: 1 Team_PSC
+ SG_ LossComms_R_EDU : 3|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ LossComms_F_EDU : 2|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ LossComms_EBCM : 1|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ LossComms_VICM : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+
+BO_ 1874 HVFault: 1 Team_PSC
+ SG_ IsltnFault_VICM : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+
+BO_ 1873 EDU_DrtMax: 1 Team_PSC
+ SG_ REDU_MaxDrtTemp : 1|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ FEDU_MaxDrtTemp : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+
+BO_ 1872 EDU_DrtThrshld: 1 Team_PSC
+ SG_ REDU_InsideDrtThrshld : 1|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+ SG_ FEDU_InsideDrtThrshld : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_RPi
+
+BO_ 1795 LnS_LightsStatus: 2 Team_RPi
+ SG_ LnS_CAVV2XLightStatus : 8|2@1+ (1,0) [0|2] ""  Team_ADAS,Team_PSC
+ SG_ LnS_CAVLatControlLightStatus : 6|2@1+ (1,0) [0|2] ""  Team_ADAS,Team_PSC
+ SG_ LnS_CAVLongControlLightStatus : 4|2@1+ (1,0) [0|2] ""  Team_ADAS,Team_PSC
+ SG_ LnS_HVSystemLightStatus : 2|2@1+ (1,0) [0|2] ""  Team_ADAS,Team_PSC
+ SG_ LnS_PropulsionSystemLightStatus : 0|2@1+ (1,0) [0|2] ""  Team_ADAS,Team_PSC
+
+BO_ 1794 LnS_SwitchesStatus: 1 Team_RPi
+ SG_ LnS_CAVV2XControlSwitchStatus : 3|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_PSC
+ SG_ LnS_CAVLatControlSwitchStatus : 2|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_PSC
+ SG_ LnS_CAVLongControlSwitchStatus : 1|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_PSC
+ SG_ LnS_RegenBrakingSwitchStatus : 0|1@1+ (1,0) [0|1] ""  Team_ADAS,Team_PSC
+
+BO_ 1793 ADAS_Lights: 1 Team_ADAS
+ SG_ CAVV2XStatusLight : 4|2@1+ (1,0) [0|2] ""  Team_RPi
+ SG_ CAVLatCtrlStatusLight : 2|2@1+ (1,0) [0|2] ""  Team_RPi
+ SG_ CAVLongCtrlStatusLight : 0|2@1+ (1,0) [0|2] ""  Team_RPi
+
+BO_ 1792 PSC_Lights: 1 Team_PSC
+ SG_ HVSystemStatusLight : 2|2@1+ (1,0) [0|2] ""  Team_RPi
+ SG_ PropulsionSystemStatusLight : 0|2@1+ (1,0) [0|2] ""  Team_RPi
+
+BO_ 1576 TrackedObject_8: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1575 TrackedObject_7: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1574 TrackedObject_6: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1573 TrackedObject_5: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1572 TrackedObject_4: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1571 TrackedObject_3: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1570 TrackedObject_2: 8 Vector__XXX
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m" Vector__XXX
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s" Vector__XXX
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m" Vector__XXX
+
+BO_ 1300 TrackedLane_Right: 8 Team_ADAS
+ SG_ TrkLn_ViewRange : 54|7@1+ (1,0) [0|127] "m" Vector__XXX
+ SG_ TrkLn_CurvatureDerivative : 38|16@1- (9.769E-07,0) [-0.0320110592|0.0320100823] "1/m^2" Vector__XXX
+ SG_ TrkLn_Heading : 12|10@1- (0.001,0) [-0.512|0.511] "rad" Vector__XXX
+ SG_ TrkLn_Status : 0|2@1+ (1,0) [0|3] "bool" Vector__XXX
+ SG_ TrkLn_Curvature : 22|16@1- (1E-05,0) [-0.32768|0.32767] "1/m" Vector__XXX
+ SG_ TrkLn_Offset : 2|10@1- (0.01,0) [-5.12|5.11] "m" Vector__XXX
+
+BO_ 1289 Reserved__Copy_3: 8 Vector__XXX
+
+BO_ 1288 Reserved__Copy_2: 8 Vector__XXX
+
+BO_ 1287 Odometer_Trip_data: 8 Vector__XXX
+ SG_ ACC_LifetimeOdometer : 48|16@1+ (0.1,0) [0|6553.5] "miles" Vector__XXX
+ SG_ DistSinceKeyUp : 24|14@1+ (0.1,0) [0|1638.3] "miles" Vector__XXX
+ SG_ VehicleOdometer : 0|18@1+ (0.1,0) [0|26214.3] "miles" Vector__XXX
+
+BO_ 1286 UTC_Timestamps: 6 Vector__XXX
+ SG_ UTC_Timestamp_s : 16|25@1+ (1,0) [0|33554431] "s" Vector__XXX
+ SG_ UTC_Timestamp_ms : 0|10@1+ (1,0) [0|1023] "ms" Vector__XXX
+
+BO_ 1569 TrackedObject_1: 8 Team_ADAS
+ SG_ TrkObj_Heading : 48|9@1- (1,0) [-256|255] "deg" Vector__XXX
+ SG_ TrkObj_Status : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TrkObj_Length : 43|5@1+ (0.2,0) [0|6.2] "m" Vector__XXX
+ SG_ TrkObj_LaneAssignment : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Classification : 57|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TrkObj_Width : 28|3@1+ (0.5,0) [0|3.5] "m" Vector__XXX
+ SG_ TrkObj_LongOffset : 16|12@1- (0.125,0) [-256|255.875] "m"  Logger
+ SG_ TrkObj_LongVelocity : 32|11@1- (0.125,0) [-128|127.875] "m/s"  Logger
+ SG_ TrkObj_LatVelocity : 8|8@1- (0.125,0) [-16|15.875] "m/s"  Logger
+ SG_ TrkObj_LatOffset : 0|8@1- (0.125,0) [-16|15.875] "m"  Logger
+
+BO_ 1299 V2X_SystemData: 4 Team_ADAS
+ SG_ V2XDistToSignal : 16|14@1- (0.1,0) [-819.2|819.1] "m"  Logger
+ SG_ V2X_TimeToNextPhase : 8|8@1+ (0.5,0) [0|127.5] "s"  Logger
+ SG_ V2X_NextPhase : 0|2@1+ (1,0) [0|3] ""  Logger
+
+BO_ 1298 TrackedLane_Left: 8 Team_ADAS
+ SG_ TrkLn_ViewRange : 54|7@1+ (1,0) [0|127] "m" Vector__XXX
+ SG_ TrkLn_CurvatureDerivative : 38|16@1- (9.769E-07,0) [-0.0320110592|0.0320100823] "1/m^2" Vector__XXX
+ SG_ TrkLn_Heading : 12|10@1- (0.001,0) [-0.512|0.511] "rad" Vector__XXX
+ SG_ TrkLn_Status : 0|2@1+ (1,0) [0|3] "bool"  Logger
+ SG_ TrkLn_Curvature : 22|16@1- (1E-05,0) [-0.32768|0.32767] "1/m"  Logger
+ SG_ TrkLn_Offset : 2|10@1- (0.01,0) [-5.12|5.11] "m"  Logger
+
+BO_ 1297 ACC_PerformanceData: 7 Team_ADAS
+ SG_ ACC_TargetTrackID : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ACC_ArbSetSpeed : 40|7@1+ (1,0) [0|127] "mph" Vector__XXX
+ SG_ ACC_DriverSetSpeed : 32|7@1+ (1,0) [0|127] "mph"  Logger
+ SG_ ACC_TargetRange : 16|16@1+ (0.01,0) [0|655.35] "m"  Logger
+ SG_ ACC_TargetRangeRate : 0|16@1- (0.01,0) [-327.68|327.67] "m/s"  Logger
+
+BO_ 1296 CAVSwitchStatus: 4 Team_ADAS
+ SG_ CAVDynoModeActive : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ AutoParkSystemStatus : 10|2@1+ (1,0) [0|3] ""  Logger
+ SG_ LCC_SystemStatus : 8|2@1+ (1,0) [0|3] ""  Logger
+ SG_ AINSystemStatus : 5|2@1+ (1,0) [0|3] ""  Logger
+ SG_ ACC_SystemStatus : 3|2@1+ (1,0) [0|3] ""  Logger
+ SG_ V2XSwitchStatus : 2|1@1+ (1,0) [0|1] ""  Logger
+ SG_ LongCtrlSwitch : 1|1@1+ (1,0) [0|1] ""  Logger
+ SG_ LatCtrlSwitch : 0|1@1+ (1,0) [0|1] ""  Logger
+
+BO_ 1284 RESSData: 8 Team_PSC
+ SG_ RESS_Voltage : 48|14@1+ (0.05,0) [0|819.15] "V"  Logger
+ SG_ RESS_Temp : 32|9@1- (0.5,0) [-128|127.5] "C"  Logger
+ SG_ RESS_SOC : 16|10@1+ (0.1,0) [0|100] "%"  Logger
+ SG_ RESS_Current : 0|16@1- (0.1,0) [-3276.8|3276.7] "A"  Logger
+
+BO_ 1280 DriverInterface: 8 Team_PSC
+ SG_ SteeringWheelAngle : 48|12@1- (0.5,0) [-1024|1023.5] "deg"  Logger
+ SG_ DriverRangeSelected : 11|3@1+ (1,0) [0|7] ""  Logger
+ SG_ DriverDemandedAxleTrq : 32|16@1- (1,0) [-32768|32767] "Nm"  Logger
+ SG_ BrakePdlPos : 16|10@1+ (0.1,0) [0|100] "%"  Logger
+ SG_ BrakeOn : 10|1@1+ (1,0) [0|1] "bool"  Logger
+ SG_ AccelPdlPos : 0|10@1+ (0.1,0) [0|100] "%"  Logger
+
+BO_ 1536 SwitchStatus_LowSpeed: 1 Team_PSC
+ SG_ RegenBrakingSwitchStatus : 3|1@1+ (1,0) [0|1] ""  Logger
+ SG_ PropSysActive : 2|1@1+ (1,0) [0|1] "bool"  Logger
+ SG_ DriverSeatOccupied : 1|1@1+ (1,0) [0|0] ""  Logger
+
+BO_ 1283 VehicleSpeeds: 7 Team_PSC
+ SG_ VehSpd_VCU : 44|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+ SG_ WheelSpeed_RR : 33|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+ SG_ WheelSpeed_RL : 22|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+ SG_ WheelSpeed_FR : 11|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+ SG_ WheelSpeed_FL : 0|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+
+BO_ 1285 VehicleLevelData: 8 Team_PSC
+ SG_ LngAccel : 32|12@1- (0.01,0) [-20.48|20.47] "m/s2"  Logger
+ SG_ LatAccel : 16|12@1- (0.01,0) [-20.48|20.47] "m/s2"  Logger
+ SG_ VehSpd_GPS : 48|11@1+ (0.1,0) [0|204.7] "kph"  Logger
+ SG_ RMot_ClutchState : 29|1@1+ (1,0) [0|1] ""  Logger
+ SG_ RMot_ClutchCmd : 28|1@1+ (1,0) [0|1] ""  Logger
+ SG_ FMot_ClutchState : 15|1@1+ (1,0) [0|1] ""  Logger
+ SG_ FMot_ClutchCmd : 14|1@1+ (1,0) [0|1] ""  Logger
+
+BO_ 1282 RearMotorData: 8 Team_PSC
+ SG_ R_MotTmp : 48|8@1+ (0.5,0) [0|127.5] "degC"  Logger
+ SG_ R_DrvRatio : 56|8@1+ (0.1,0) [0|25.5] ""  Logger
+ SG_ R_InvCurr_DC : 28|12@1- (1,0) [-2048|2047] "A"  Logger
+ SG_ R_MotTrq : 16|12@1- (0.25,0) [-512|511.75] "Nm"  Logger
+ SG_ R_MotSpd : 0|16@1- (1,0) [-32768|32767] "rpm"  Logger
+ SG_ R_InvTmp : 40|8@1+ (0.5,0) [0|127.5] "degC"  Logger
+
+BO_ 1281 FrontMotorData: 8 Team_PSC
+ SG_ F_InvCurr_DC : 28|12@1- (1,0) [-2048|2047] "A"  Logger
+ SG_ F_DrvRatio : 56|8@1+ (0.1,0) [0|25.5] ""  Logger
+ SG_ F_MotTrq : 16|12@1- (0.25,0) [-512|511.75] "Nm"  Logger
+ SG_ F_MotTmp : 48|8@1+ (0.5,0) [0|127.5] "degC"  Logger
+ SG_ F_InvTmp : 40|8@1+ (0.5,0) [0|127.5] "degC"  Logger
+ SG_ F_MotSpd : 0|16@1- (1,0) [-32768|32767] "rpm"  Logger
+
+BO_ 1040 iPDS_RelayRequest: 2 iPDSC
+ SG_ REQUEST : 8|8@1+ (1,0) [0|0] ""  iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3
+ SG_ CHANNEL : 0|8@1+ (1,0) [0|51] ""  iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3
+
+BO_ 1041 iPDS_ModeRequest: 1 iPDSC
+ SG_ MODE : 0|8@1+ (1,0) [0|0] ""  iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3
+
+BO_ 1042 iPDS_ScriptRequest: 1 iPDSC
+ SG_ SCRIPT : 0|8@1+ (1,0) [0|0] ""  iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3
+
+BO_ 1043 iPDS_Reserved1: 1 iPDS_HMI
+ SG_ RESERVED1 : 7|8@0+ (1,0) [0|0] ""  iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3
+
+BO_ 1056 iPDS_StatusMaster: 8 iPDS_Master
+ SG_ STATUS12 : 60|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS11 : 56|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS10 : 52|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS9 : 48|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS8 : 44|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS7 : 40|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS6 : 36|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS5 : 32|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS4 : 28|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS3 : 24|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS2 : 20|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS1 : 16|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ SCRIPT : 12|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ MODE : 8|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ INV1_OVERTEMP : 7|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV1_OVERLOAD : 6|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV1_STATUS : 5|1@1+ (1,0) [0|0] ""  Team_PSC,iPDS_HMI,iPDSC
+ SG_ INV1_REQUEST : 4|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ REVISION : 0|4@1+ (1,0) [0|0] ""  Team_PSC
+
+BO_ 1057 iPDS_StatusSlave1: 8 iPDS_Slave1
+ SG_ STATUS24 : 60|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS23 : 56|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS22 : 52|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS21 : 48|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS20 : 44|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS19 : 40|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS18 : 36|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS17 : 32|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS16 : 28|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS15 : 24|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS14 : 20|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ STATUS13 : 16|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ SCRIPT : 12|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ MODE : 8|4@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ INV2_OVERTEMP : 7|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV2_OVERLOAD : 6|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV2_STATUS : 5|1@1+ (1,0) [0|0] ""  Team_PSC,iPDSC,iPDS_HMI
+ SG_ INV2_REQUEST : 4|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ REVISION : 0|4@1+ (1,0) [0|0] ""  Team_PSC
+
+BO_ 1058 iPDS_StatusSlave2: 8 iPDS_Slave2
+ SG_ STATUS36 : 60|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS35 : 56|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS34 : 52|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS33 : 48|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS32 : 44|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS31 : 40|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS30 : 36|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS29 : 32|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS28 : 28|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS27 : 24|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS26 : 20|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS25 : 16|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ SCRIPT : 12|4@1+ (1,0) [0|0] ""  Team_PSC,iPDS_HMI
+ SG_ MODE : 8|4@1+ (1,0) [0|0] ""  Team_PSC,iPDS_HMI
+ SG_ INV3_OVERTEMP : 7|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV3_OVERLOAD : 6|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV3_STATUS : 5|1@1+ (1,0) [0|0] ""  Team_PSC,iPDS_HMI
+ SG_ INV3_REQUEST : 4|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ REVISION : 0|4@1+ (1,0) [0|0] ""  Team_PSC
+
+BO_ 1059 iPDS_StatusSlave3: 8 iPDS_Slave3
+ SG_ STATUS48 : 60|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS47 : 56|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS46 : 52|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS45 : 48|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS44 : 44|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS43 : 40|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS42 : 36|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS41 : 32|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS40 : 28|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS39 : 24|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS38 : 20|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ STATUS37 : 16|4@1+ (1,0) [0|0] ""  iPDS_HMI
+ SG_ SCRIPT : 12|4@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ MODE : 8|4@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV4_OVERTEMP : 7|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV4_OVERLOAD : 6|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ INV4_STATUS : 5|1@1+ (1,0) [0|0] ""  Team_PSC,iPDS_HMI
+ SG_ INV4_REQUEST : 4|1@1+ (1,0) [0|0] ""  Team_PSC
+ SG_ REVISION : 0|4@1+ (1,0) [0|0] ""  Team_PSC
+
+BO_ 1060 iPDS_Current1Master: 8 iPDS_Master
+ SG_ CURRENT4 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT3 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT2 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT1 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1061 iPDS_Current1Slave1: 8 iPDS_Slave1
+ SG_ CURRENT16 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT15 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT14 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT13 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1062 iPDS_Current1Slave2: 8 iPDS_Slave2
+ SG_ CURRENT28 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT27 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT26 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT25 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1063 iPDS_Current1Slave3: 8 iPDS_Slave3
+ SG_ CURRENT40 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT39 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT38 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT37 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1064 iPDS_Current2Master: 8 iPDS_Master
+ SG_ CURRENT8 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT7 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT6 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT5 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1065 iPDS_Current2Slave1: 8 iPDS_Slave1
+ SG_ CURRENT20 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT19 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT18 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT17 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1066 iPDS_Current2Slave2: 8 iPDS_Slave2
+ SG_ CURRENT32 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT31 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT30 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT29 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1067 iPDS_Current2Slave3: 8 iPDS_Slave3
+ SG_ CURRENT44 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT43 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT42 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT41 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1068 iPDS_Current3Master: 8 iPDS_Master
+ SG_ CURRENT12 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT11 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT10 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT9 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1069 iPDS_Current3Slave1: 8 iPDS_Slave1
+ SG_ CURRENT24 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT23 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT22 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT21 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1070 iPDS_Current3Slave2: 8 iPDS_Slave2
+ SG_ CURRENT36 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT35 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT34 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT33 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1071 iPDS_Current3Slave3: 8 iPDS_Slave3
+ SG_ CURRENT48 : 48|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT47 : 32|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT46 : 16|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+ SG_ CURRENT45 : 0|16@1- (0.001,0) [0|0] "A"  Team_PSC,iPDS_HMI
+
+BO_ 1072 iPDS_Reserved2: 6 iPDS_Master
+ SG_ RESERVED2 : 7|48@0+ (1,0) [0|0] ""  iPDSC
+
+BO_ 1073 iPDS_Reserved3: 8 iPDS_Master
+ SG_ RESERVED3 : 7|64@0+ (1,0) [0|0] ""  iPDS_HMI
+
+BO_ 1074 iPDS_Reserved4: 4 iPDS_Master
+ SG_ RESERVED4 : 7|32@0+ (1,0) [0|0] ""  iPDS_HMI
+
+BO_ 1084 iPDS_Status2_Master: 4 iPDS_Master
+ SG_ VOLTAGE : 16|12@1+ (0.01,0) [0|0] "V"  Team_PSC,iPDS_HMI
+ SG_ THERMOCOUPLE : 8|8@1- (0.5,44) [-20|107.5] "�C"  Team_PSC,iPDS_HMI
+ SG_ BOARDTEMP : 0|8@1- (0.5,44) [-20|107.5] "�C"  Team_PSC,iPDS_HMI
+
+BO_ 1085 iPDS_Status2_Slave1: 4 iPDS_Slave1
+ SG_ VOLTAGE : 16|12@1+ (0.01,0) [0|0] "V"  Team_PSC,iPDS_HMI
+ SG_ THERMOCOUPLE : 8|8@1- (0.5,44) [-20|107.5] "�C"  Team_PSC,iPDS_HMI
+ SG_ BOARDTEMP : 0|8@1- (0.5,44) [-20|107.5] "�C"  Team_PSC,iPDS_HMI
+
+BO_ 1086 iPDS_Status2_Slave2: 4 iPDS_Slave2
+ SG_ VOLTAGE : 16|12@1+ (0.01,0) [0|0] "V"  Team_PSC,iPDS_HMI
+ SG_ THERMOCOUPLE : 8|8@1- (0.5,44) [-20|107.5] "�C"  iPDS_HMI
+ SG_ BOARDTEMP : 0|8@1- (0.5,44) [-20|107.5] "�C"  iPDS_HMI
+
+BO_ 1087 iPDS_Status2_Slave3: 4 iPDS_Slave3
+ SG_ VOLTAGE : 16|12@1+ (0.01,0) [0|0] "V"  Team_PSC,iPDS_HMI
+ SG_ THERMOCOUPLE : 8|8@1- (0.5,44) [-20|107.5] "�C"  iPDS_HMI
+ SG_ BOARDTEMP : 0|8@1- (0.5,44) [-20|107.5] "�C"  iPDS_HMI
+
+BO_TX_BU_ 1040 : Team_PSC,iPDS_HMI,iPDSC;
+BO_TX_BU_ 1041 : Team_PSC,iPDS_HMI,iPDSC;
+BO_TX_BU_ 1042 : Team_PSC,iPDS_HMI,iPDSC;
+BO_TX_BU_ 1073 : iPDS_Master,iPDS_Slave1,iPDS_Slave2,iPDS_Slave3;
+
+
+CM_ BU_ iPDS_Master "Intelligent Power Distribution System (Master)";
+CM_ BU_ iPDS_Slave1 "Intelligent Power Distribution System (Slave 1)";
+CM_ BU_ iPDS_Slave2 "Intelligent Power Distribution System (Slave 2)";
+CM_ BU_ iPDS_Slave3 "Intelligent Power Distribution System (Slave 3)";
+CM_ BU_ iPDSC "Intelligent Power Distribution System Controller (Switch Panel)";
+CM_ BU_ iPDS_HMI "Intelligent Power Distribution System HMI (Touch Screen)";
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 3221225472 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 3221225472 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 3221225472 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordi";
+CM_ SG_ 3221225472 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordi";
+CM_ SG_ 3221225472 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle ";
+CM_ SG_ 3221225472 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle ";
+CM_ SG_ 1576 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1576 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1576 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1576 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1576 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1576 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1576 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1575 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1575 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1575 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1575 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1575 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1575 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1575 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1574 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1574 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1574 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1574 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1574 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1574 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1574 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1573 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1573 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1573 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1573 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1573 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1573 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1573 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1572 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1572 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1572 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1572 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1572 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1572 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1572 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1571 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1571 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1571 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1571 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1571 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1571 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1571 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1570 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1570 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1570 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1570 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1570 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1570 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1570 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1300 TrkLn_CurvatureDerivative "Curvature derivative of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1300 TrkLn_Heading "Heading of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1300 TrkLn_Curvature "Lane curvature of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1300 TrkLn_Offset "Lateral offset of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ BO_ 1289 "reserved ID for future Data as need";
+CM_ BO_ 1288 "reserved ID for future Data as need";
+CM_ BO_ 1287 "reserved ID for future Data as need";
+CM_ BO_ 1286 "reserved ID for future Data as need";
+CM_ SG_ 1286 UTC_Timestamp_s "UTC timestamp seconds within the current calendar year";
+CM_ SG_ 1569 TrkObj_Heading "Angle (deg) between ego vehicle heading and target vehicle heading. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1569 TrkObj_Length "Estimated length of the tracked object (object dimension, parallel to heading)";
+CM_ SG_ 1569 TrkObj_Width "Estimated width of the tracked object (object dimension normal to heading)";
+CM_ SG_ 1569 TrkObj_LongOffset "Longitudinal component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1569 TrkObj_LongVelocity "Longitudinal component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1569 TrkObj_LatVelocity "Lateral component of tracked object's velocity in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1569 TrkObj_LatOffset "Lateral component of tracked object's position in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1298 TrkLn_CurvatureDerivative "Curvature derivative of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1298 TrkLn_Heading "Heading of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1298 TrkLn_Curvature "Lane curvature of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1298 TrkLn_Offset "Lateral offset of lane polynomial in the ego vehicle's reference frame. Standard coordinate system defined in the Vehicle Design Rules.";
+CM_ SG_ 1297 ACC_TargetTrackID "Object track using for ACC speed tracking. 0 = not tracking to a target";
+CM_ SG_ 1297 ACC_ArbSetSpeed "Arbitrated set speed ";
+CM_ SG_ 1282 R_DrvRatio "use 0 for disconnnected drive units";
+CM_ SG_ 1281 F_DrvRatio "use 0 for disconnnected drive units";
+CM_ SG_ 1040 REQUEST "iPDS Relay Request";
+CM_ SG_ 1040 CHANNEL "iPDS Relay Request Channel";
+CM_ SG_ 1041 MODE "iPDS Mode Request";
+CM_ SG_ 1042 SCRIPT "iPDS Script Request";
+CM_ SG_ 1056 STATUS12 "iPDS Channel 12 Status";
+CM_ SG_ 1056 STATUS11 "iPDS Channel 11 Status";
+CM_ SG_ 1056 STATUS10 "iPDS Channel 10 Status";
+CM_ SG_ 1056 STATUS9 "iPDS Channel 9 Status";
+CM_ SG_ 1056 STATUS8 "iPDS Channel 8 Status";
+CM_ SG_ 1056 STATUS7 "iPDS Channel 7 Status";
+CM_ SG_ 1056 STATUS6 "iPDS Channel 6 Status";
+CM_ SG_ 1056 STATUS5 "iPDS Channel 5 Status";
+CM_ SG_ 1056 STATUS4 "iPDS Channel 4 Status";
+CM_ SG_ 1056 STATUS3 "iPDS Channel 3 Status";
+CM_ SG_ 1056 STATUS2 "iPDS Channel 2 Status";
+CM_ SG_ 1056 STATUS1 "iPDS Channel 1 Status";
+CM_ SG_ 1056 SCRIPT "iPDS Script Master";
+CM_ SG_ 1056 MODE "iPDS Mode Master";
+CM_ SG_ 1056 INV1_OVERTEMP "iPDS Channel Inverter Over-temperature Master";
+CM_ SG_ 1056 INV1_OVERLOAD "iPDS Channel Inverter Over-load Master";
+CM_ SG_ 1056 INV1_STATUS "iPDS Channel Inverter Status Master";
+CM_ SG_ 1056 INV1_REQUEST "iPDS Channel Inverter Request Master";
+CM_ SG_ 1056 REVISION "iPDS Hardware Feature Revision";
+CM_ SG_ 1057 STATUS24 "iPDS Channel 24 Status";
+CM_ SG_ 1057 STATUS23 "iPDS Channel 23 Status";
+CM_ SG_ 1057 STATUS22 "iPDS Channel 22 Status";
+CM_ SG_ 1057 STATUS21 "iPDS Channel 21 Status";
+CM_ SG_ 1057 STATUS20 "iPDS Channel 20 Status";
+CM_ SG_ 1057 STATUS19 "iPDS Channel 19 Status";
+CM_ SG_ 1057 STATUS18 "iPDS Channel 18 Status";
+CM_ SG_ 1057 STATUS17 "iPDS Channel 17 Status";
+CM_ SG_ 1057 STATUS16 "iPDS Channel 16 Status";
+CM_ SG_ 1057 STATUS15 "iPDS Channel 15 Status";
+CM_ SG_ 1057 STATUS14 "iPDS Channel 14 Status";
+CM_ SG_ 1057 STATUS13 "iPDS Channel 13 Status";
+CM_ SG_ 1057 SCRIPT "iPDS Script Slave";
+CM_ SG_ 1057 MODE "iPDS Mode Slave";
+CM_ SG_ 1057 INV2_OVERTEMP "iPDS Channel Inverter Over-temperature Slave 1";
+CM_ SG_ 1057 INV2_OVERLOAD "iPDS Channel Inverter Over-load Slave 1";
+CM_ SG_ 1057 INV2_STATUS "iPDS Channel Inverter Status Slave 1";
+CM_ SG_ 1057 INV2_REQUEST "iPDS Channel Inverter Request Slave 1";
+CM_ SG_ 1057 REVISION "iPDS Hardware Feature Revision";
+CM_ SG_ 1058 STATUS36 "iPDS Channel 36 Status";
+CM_ SG_ 1058 STATUS35 "iPDS Channel 35 Status";
+CM_ SG_ 1058 STATUS34 "iPDS Channel 34 Status";
+CM_ SG_ 1058 STATUS33 "iPDS Channel 33 Status";
+CM_ SG_ 1058 STATUS32 "iPDS Channel 32 Status";
+CM_ SG_ 1058 STATUS31 "iPDS Channel 31 Status";
+CM_ SG_ 1058 STATUS30 "iPDS Channel 30 Status";
+CM_ SG_ 1058 STATUS29 "iPDS Channel 29 Status";
+CM_ SG_ 1058 STATUS28 "iPDS Channel 28 Status";
+CM_ SG_ 1058 STATUS27 "iPDS Channel 27 Status";
+CM_ SG_ 1058 STATUS26 "iPDS Channel 26 Status";
+CM_ SG_ 1058 STATUS25 "iPDS Channel 25 Status";
+CM_ SG_ 1058 SCRIPT "iPDS Script Slave";
+CM_ SG_ 1058 MODE "iPDS Mode Slave";
+CM_ SG_ 1058 INV3_OVERTEMP "iPDS Channel Inverter Over-temperature Slave 2";
+CM_ SG_ 1058 INV3_OVERLOAD "iPDS Channel Inverter Over-load Slave 2";
+CM_ SG_ 1058 INV3_STATUS "iPDS Channel Inverter Status Slave 2";
+CM_ SG_ 1058 INV3_REQUEST "iPDS Channel Inverter Request Slave 2";
+CM_ SG_ 1058 REVISION "iPDS Hardware Feature Revision";
+CM_ SG_ 1059 STATUS48 "iPDS Channel 48 Status";
+CM_ SG_ 1059 STATUS47 "iPDS Channel 47 Status";
+CM_ SG_ 1059 STATUS46 "iPDS Channel 46 Status";
+CM_ SG_ 1059 STATUS45 "iPDS Channel 45 Status";
+CM_ SG_ 1059 STATUS44 "iPDS Channel 44 Status";
+CM_ SG_ 1059 STATUS43 "iPDS Channel 43 Status";
+CM_ SG_ 1059 STATUS42 "iPDS Channel 42 Status";
+CM_ SG_ 1059 STATUS41 "iPDS Channel 41 Status";
+CM_ SG_ 1059 STATUS40 "iPDS Channel 40 Status";
+CM_ SG_ 1059 STATUS39 "iPDS Channel 39 Status";
+CM_ SG_ 1059 STATUS38 "iPDS Channel 38 Status";
+CM_ SG_ 1059 STATUS37 "iPDS Channel 37 Status";
+CM_ SG_ 1059 SCRIPT "iPDS Script Slave";
+CM_ SG_ 1059 MODE "iPDS Mode Slave";
+CM_ SG_ 1059 INV4_OVERTEMP "iPDS Channel Inverter Over-temperature Slave 3";
+CM_ SG_ 1059 INV4_OVERLOAD "iPDS Channel Inverter Over-load Slave 3";
+CM_ SG_ 1059 INV4_STATUS "iPDS Channel Inverter Status Slave3";
+CM_ SG_ 1059 INV4_REQUEST "iPDS Channel Inverter Request Slave 3";
+CM_ SG_ 1059 REVISION "iPDS Hardware Feature Revision";
+CM_ SG_ 1060 CURRENT4 "iPDS Channel 4 Current";
+CM_ SG_ 1060 CURRENT3 "iPDS Channel 3 Current";
+CM_ SG_ 1060 CURRENT2 "iPDS Channel 2 Current";
+CM_ SG_ 1060 CURRENT1 "iPDS Channel 1 Current";
+CM_ SG_ 1061 CURRENT16 "iPDS Channel 16 Current";
+CM_ SG_ 1061 CURRENT15 "iPDS Channel 15 Current";
+CM_ SG_ 1061 CURRENT14 "iPDS Channel 14 Current";
+CM_ SG_ 1061 CURRENT13 "iPDS Channel 13 Current";
+CM_ SG_ 1062 CURRENT28 "iPDS Channel 28 Current";
+CM_ SG_ 1062 CURRENT27 "iPDS Channel 27 Current";
+CM_ SG_ 1062 CURRENT26 "iPDS Channel 26 Current";
+CM_ SG_ 1062 CURRENT25 "iPDS Channel 25 Current";
+CM_ SG_ 1063 CURRENT40 "iPDS Channel 40 Current";
+CM_ SG_ 1063 CURRENT39 "iPDS Channel 39 Current";
+CM_ SG_ 1063 CURRENT38 "iPDS Channel 38 Current";
+CM_ SG_ 1063 CURRENT37 "iPDS Channel 37 Current";
+CM_ SG_ 1064 CURRENT8 "iPDS Channel 8 Current";
+CM_ SG_ 1064 CURRENT7 "iPDS Channel 7 Current";
+CM_ SG_ 1064 CURRENT6 "iPDS Channel 6 Current";
+CM_ SG_ 1064 CURRENT5 "iPDS Channel 5 Current";
+CM_ SG_ 1065 CURRENT20 "iPDS Channel 20 Current";
+CM_ SG_ 1065 CURRENT19 "iPDS Channel 19 Current";
+CM_ SG_ 1065 CURRENT18 "iPDS Channel 18 Current";
+CM_ SG_ 1065 CURRENT17 "iPDS Channel 17 Current";
+CM_ SG_ 1066 CURRENT32 "iPDS Channel 32 Current";
+CM_ SG_ 1066 CURRENT31 "iPDS Channel 31 Current";
+CM_ SG_ 1066 CURRENT30 "iPDS Channel 30 Current";
+CM_ SG_ 1066 CURRENT29 "iPDS Channel 29 Current";
+CM_ SG_ 1067 CURRENT44 "iPDS Channel 44 Current";
+CM_ SG_ 1067 CURRENT43 "iPDS Channel 43 Current";
+CM_ SG_ 1067 CURRENT42 "iPDS Channel 42 Current";
+CM_ SG_ 1067 CURRENT41 "iPDS Channel 41 Current";
+CM_ SG_ 1068 CURRENT12 "iPDS Channel 12 Current";
+CM_ SG_ 1068 CURRENT11 "iPDS Channel 11 Current";
+CM_ SG_ 1068 CURRENT10 "iPDS Channel 10 Current";
+CM_ SG_ 1068 CURRENT9 "iPDS Channel 9 Current";
+CM_ SG_ 1069 CURRENT24 "iPDS Channel 24 Current";
+CM_ SG_ 1069 CURRENT23 "iPDS Channel 23 Current";
+CM_ SG_ 1069 CURRENT22 "iPDS Channel 22 Current";
+CM_ SG_ 1069 CURRENT21 "iPDS Channel 21 Current";
+CM_ SG_ 1070 CURRENT36 "iPDS Channel 36 Current";
+CM_ SG_ 1070 CURRENT35 "iPDS Channel 35 Current";
+CM_ SG_ 1070 CURRENT34 "iPDS Channel 34 Current";
+CM_ SG_ 1070 CURRENT33 "iPDS Channel 33 Current";
+CM_ SG_ 1071 CURRENT48 "iPDS Channel 48 Current";
+CM_ SG_ 1071 CURRENT47 "iPDS Channel 47 Current";
+CM_ SG_ 1071 CURRENT46 "iPDS Channel 46 Current";
+CM_ SG_ 1071 CURRENT45 "iPDS Channel 45 Current";
+CM_ SG_ 1084 VOLTAGE "Input Voltage";
+CM_ SG_ 1084 THERMOCOUPLE "External Thermocouple";
+CM_ SG_ 1084 BOARDTEMP "Internal Board Temperature";
+CM_ SG_ 1085 VOLTAGE "Input Voltage";
+CM_ SG_ 1085 THERMOCOUPLE "External Thermocouple";
+CM_ SG_ 1085 BOARDTEMP "Internal Board Temperature";
+CM_ SG_ 1086 VOLTAGE "Input Voltage";
+CM_ SG_ 1086 THERMOCOUPLE "External Thermocouple";
+CM_ SG_ 1086 BOARDTEMP "Internal Board Temperature";
+CM_ SG_ 1087 VOLTAGE "Input Voltage";
+CM_ SG_ 1087 THERMOCOUPLE "External Thermocouple";
+CM_ SG_ 1087 BOARDTEMP "Internal Board Temperature";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "FixedPeriodic","Event","EnabledPeriodic","NotUsed","NotUsed","EventPeriodic","NotUsed","NotUsed","NoMsgSendType";
+BA_DEF_  "NetworkSpeed" ENUM  "500kBits/s";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NetworkSpeed" "500kBits/s";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "GenMsgSendType" BO_ 1040 1;
+BA_ "GenMsgSendType" BO_ 1041 1;
+BA_ "GenMsgSendType" BO_ 1042 1;
+BA_ "GenMsgSendType" BO_ 1043 1;
+BA_ "GenMsgCycleTime" BO_ 1056 50;
+BA_ "GenMsgSendType" BO_ 1056 0;
+BA_ "GenMsgCycleTime" BO_ 1057 50;
+BA_ "GenMsgSendType" BO_ 1057 0;
+BA_ "GenMsgCycleTime" BO_ 1058 50;
+BA_ "GenMsgSendType" BO_ 1058 0;
+BA_ "GenMsgCycleTime" BO_ 1059 50;
+BA_ "GenMsgSendType" BO_ 1059 0;
+BA_ "GenMsgCycleTime" BO_ 1060 50;
+BA_ "GenMsgSendType" BO_ 1060 0;
+BA_ "GenMsgCycleTime" BO_ 1061 50;
+BA_ "GenMsgSendType" BO_ 1061 0;
+BA_ "GenMsgCycleTime" BO_ 1062 50;
+BA_ "GenMsgSendType" BO_ 1062 0;
+BA_ "GenMsgCycleTime" BO_ 1063 50;
+BA_ "GenMsgSendType" BO_ 1063 0;
+BA_ "GenMsgCycleTime" BO_ 1064 50;
+BA_ "GenMsgSendType" BO_ 1064 0;
+BA_ "GenMsgCycleTime" BO_ 1065 50;
+BA_ "GenMsgSendType" BO_ 1065 0;
+BA_ "GenMsgCycleTime" BO_ 1066 50;
+BA_ "GenMsgSendType" BO_ 1066 0;
+BA_ "GenMsgCycleTime" BO_ 1067 50;
+BA_ "GenMsgSendType" BO_ 1067 0;
+BA_ "GenMsgCycleTime" BO_ 1068 50;
+BA_ "GenMsgSendType" BO_ 1068 0;
+BA_ "GenMsgCycleTime" BO_ 1069 50;
+BA_ "GenMsgSendType" BO_ 1069 0;
+BA_ "GenMsgCycleTime" BO_ 1070 50;
+BA_ "GenMsgSendType" BO_ 1070 0;
+BA_ "GenMsgCycleTime" BO_ 1071 50;
+BA_ "GenMsgSendType" BO_ 1071 0;
+BA_ "GenMsgCycleTime" BO_ 1072 200;
+BA_ "GenMsgSendType" BO_ 1072 0;
+BA_ "GenMsgSendType" BO_ 1073 1;
+BA_ "GenMsgCycleTime" BO_ 1074 200;
+BA_ "GenMsgSendType" BO_ 1074 0;
+BA_ "GenMsgCycleTime" BO_ 1084 50;
+BA_ "GenMsgSendType" BO_ 1084 0;
+BA_ "GenMsgCycleTime" BO_ 1085 50;
+BA_ "GenMsgSendType" BO_ 1085 0;
+BA_ "GenMsgCycleTime" BO_ 1086 50;
+BA_ "GenMsgSendType" BO_ 1086 0;
+BA_ "GenMsgCycleTime" BO_ 1087 50;
+BA_ "GenMsgSendType" BO_ 1087 0;
+VAL_ 3221225472 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 3221225472 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 3221225472 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1576 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1576 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1576 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1575 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1575 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1575 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1574 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1574 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1574 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1573 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1573 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1573 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1572 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1572 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1572 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1571 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1571 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1571 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1570 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1570 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1570 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1300 TrkLn_Status 2 "inactive" 1 "active" 0 "unknown" ;
+VAL_ 1569 TrkObj_Status 1 "active" 0 "inactive" ;
+VAL_ 1569 TrkObj_LaneAssignment 3 "right lane" 2 "left lane" 1 "host lane / in path" 0 "unknown" ;
+VAL_ 1569 TrkObj_Classification 2 "pedestrian" 1 "vehicle" 0 "unknown" ;
+VAL_ 1299 V2X_NextPhase 3 "Green" 2 "Yellow" 1 "Red" 0 "No Signal" ;
+VAL_ 1298 TrkLn_Status 2 "inactive" 1 "active" 0 "unknown" ;
+VAL_ 1296 CAVDynoModeActive 1 "Switch On" 0 "Switch Off" ;
+VAL_ 1296 AutoParkSystemStatus 3 "Unavailable (Faulted)" 2 "Active" 1 "Standby" 0 "Inactive" ;
+VAL_ 1296 LCC_SystemStatus 3 "Unavailable (Faulted)" 2 "Active" 1 "Standby" 0 "Inactive" ;
+VAL_ 1296 AINSystemStatus 3 "Unavailable (Faulted)" 2 "Active" 1 "Standby" 0 "Inactive" ;
+VAL_ 1296 ACC_SystemStatus 3 "Unavailable (Faulted)" 2 "Active" 1 "Standby" 0 "Inactive" ;
+VAL_ 1296 V2XSwitchStatus 1 "Switch On" 0 "Switch Off" ;
+VAL_ 1296 LongCtrlSwitch 1 "Switch On" 0 "Switch Off" ;
+VAL_ 1296 LatCtrlSwitch 1 "Switch On" 0 "Switch Off" ;
+VAL_ 1280 DriverRangeSelected 7 "reserved" 6 "reserved" 5 "ServiceMode" 4 "Low" 3 "Drive" 2 "Neutral" 1 "Reverse" 0 "Park" ;
+VAL_ 1536 RegenBrakingSwitchStatus 1 "Regen ENABLED" 0 "Regen DISABLED" ;
+VAL_ 1536 DriverSeatOccupied 1 "Switch On" 0 "Switch Off" ;
+VAL_ 1285 RMot_ClutchState 1 "Clutch Closed" 0 "Clutch Open" ;
+VAL_ 1285 RMot_ClutchCmd 1 "Clutch Closed" 0 "Clutch Open" ;
+VAL_ 1285 FMot_ClutchState 1 "Clutch Closed" 0 "Clutch Open" ;
+VAL_ 1285 FMot_ClutchCmd 1 "Clutch Closed" 0 "Clutch Open" ;
+VAL_ 1040 REQUEST 2 "Toggle" 1 "On" 0 "Off" ;
+VAL_ 1040 CHANNEL 51 "INVERTER 4" 50 "INVERTER 3" 49 "INVERTER 2" 48 "INVERTER 1" 47 "CH48" 46 "CH47" 45 "CH46" 44 "CH45" 43 "CH44" 42 "CH43" 41 "CH42" 40 "CH41" 39 "CH40" 38 "CH39" 37 "CH38" 36 "CH37" 35 "CH36" 34 "CH35" 33 "CH34" 32 "CH33" 31 "CH32" 30 "CH31" 29 "CH30" 28 "CH29" 27 "CH28" 26 "CH27" 25 "CH26" 24 "CH25" 23 "CH24" 22 "CH23" 21 "CH22" 20 "CH21" 19 "CH20" 18 "CH19" 17 "CH18" 16 "CH17" 15 "CH16" 14 "CH15" 13 "CH14" 12 "CH13" 11 "CH12" 10 "CH11" 9 "CH10" 8 "CH09" 7 "CH08" 6 "CH07" 5 "CH06" 4 "CH05" 3 "CH04" 2 "CH03" 1 "CH02" 0 "CH01" ;
+VAL_ 1041 MODE 2 "Valet" 1 "Manual" 0 "Auto" ;
+VAL_ 1042 SCRIPT 4 "Valet Shutdown" 3 "Valet Startup" 2 "Shutdown" 1 "Startup" 0 "None" ;
+VAL_ 1056 STATUS12 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS11 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS10 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS9 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS8 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS7 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS6 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS5 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS4 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS3 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS2 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 STATUS1 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1056 SCRIPT 4 "Valet Shutdown" 3 "Valet Startup" 2 "Shutdown" 1 "Startup" 0 "None" ;
+VAL_ 1056 MODE 2 "Valet" 1 "Manual" 0 "Auto" ;
+VAL_ 1056 INV1_OVERTEMP 1 "Fault" 0 "No Fault" ;
+VAL_ 1056 INV1_OVERLOAD 1 "Fault" 0 "No Fault" ;
+VAL_ 1056 INV1_STATUS 1 "On" 0 "Off" ;
+VAL_ 1056 INV1_REQUEST 1 "On" 0 "Off" ;
+VAL_ 1056 REVISION 8 "RevH" 7 "RevG" 2 "RevB" 1 "RevA" ;
+VAL_ 1057 STATUS24 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS23 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS22 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS21 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS20 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS19 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS18 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS17 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS16 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS15 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS14 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 STATUS13 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1057 SCRIPT 4 "Valet Shutdown" 3 "Valet Startup" 2 "Shutdown" 1 "Startup" 0 "None" ;
+VAL_ 1057 MODE 2 "Valet" 1 "Manual" 0 "Auto" ;
+VAL_ 1057 INV2_OVERTEMP 1 "Fault" 0 "No Fault" ;
+VAL_ 1057 INV2_OVERLOAD 1 "Fault" 0 "No Fault" ;
+VAL_ 1057 INV2_STATUS 1 "On" 0 "Off" ;
+VAL_ 1057 INV2_REQUEST 1 "On" 0 "Off" ;
+VAL_ 1057 REVISION 8 "RevH" 7 "RevG" 2 "RevB" 1 "RevA" ;
+VAL_ 1058 STATUS36 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS35 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS34 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS33 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS32 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS31 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS30 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS29 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS28 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS27 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS26 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 STATUS25 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1058 SCRIPT 4 "Valet Shutdown" 3 "Valet Startup" 2 "Shutdown" 1 "Startup" 0 "None" ;
+VAL_ 1058 MODE 2 "Valet" 1 "Manual" 0 "Auto" ;
+VAL_ 1058 INV3_OVERTEMP 1 "Fault" 0 "No Fault" ;
+VAL_ 1058 INV3_OVERLOAD 1 "Fault" 0 "No Fault" ;
+VAL_ 1058 INV3_STATUS 1 "On" 0 "Off" ;
+VAL_ 1058 INV3_REQUEST 1 "On" 0 "Off" ;
+VAL_ 1058 REVISION 8 "RevH" 7 "RevG" 2 "RevB" 1 "RevA" ;
+VAL_ 1059 STATUS48 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS47 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS46 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS45 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS44 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS43 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS42 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS41 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS40 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS39 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS38 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 STATUS37 5 "Over current" 4 "Bad fuse" 3 "Bad relay" 2 "No load" 1 "On" 0 "Off" ;
+VAL_ 1059 SCRIPT 4 "Valet Shutdown" 3 "Valet Startup" 2 "Shutdown" 1 "Startup" 0 "None" ;
+VAL_ 1059 MODE 2 "Valet" 1 "Manual" 0 "Auto" ;
+VAL_ 1059 INV4_OVERTEMP 1 "Fault" 0 "No Fault" ;
+VAL_ 1059 INV4_OVERLOAD 1 "Fault" 0 "No Fault" ;
+VAL_ 1059 INV4_STATUS 1 "On" 0 "Off" ;
+VAL_ 1059 INV4_REQUEST 1 "On" 0 "Off" ;
+VAL_ 1059 REVISION 8 "RevH" 7 "RevG" 2 "RevB" 1 "RevA" ;
+

@@ -1,0 +1,22 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 200 200">
+  <style>
+    @keyframes hover {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(0, -50px); }
+    }
+    .magnifier {
+      animation: hover 2s ease-in-out infinite;
+    }
+  </style>
+  
+  <!-- Parking sign -->
+  <rect x="70" y="85" width="60" height="90" rx="5" fill="Black"/>
+  <text x="85" y="150" font-family="Seaford" font-size="60" fill="white">P</text>
+  
+  <!-- Magnifying glass -->
+  <g class="magnifier">
+    <circle cx="100" cy="150" r="30" fill="none" stroke="#A9A9A9" stroke-width="8"/>
+    <line x1="120" y1="170" x2="140" y2="190" stroke="#A9A9A9" stroke-width="8"/>
+  </g>
+</svg>

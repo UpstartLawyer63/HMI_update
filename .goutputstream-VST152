@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+import sys
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtCore import QTimer, QObject, pyqtSignal
+import cantools.database
+from vehicle_ui import MainWindow
+from warning_overlay import show_warning_overlay
+import threading
+import can  
+import cantools
+
+active_warning = None
+last_warning_time = 0
+
+class CANFDReader(QObject):
+    # Define signals to emit when new CAN data is received
+    can0_signal = pyqtSignal(dict)
+    can1_signal = pyqtSignal(dict)
+    
+    def __init__(self):
+        super().__init__()
+        self.running = True
+        self.can2_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/GM_GB_DWCAN2.dbc')
+        self.evc_can_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/EVC_DataLogging_Rev3_EDITED_Rev2.dbc')
+
+    def start_reading(self):
+        # Start the CAN reading thread
+        self.thread = threading.Thread(target=self.read_can_bus, daemon=True)
+        self.thread.start()
+        
+    def read_can_bus(self):
+        try:
+            # Set up CAN FD bus interfaces
+            # TODO: Connect CAN0 on the board to CAN2 on the vehicle.
+            bus0 = can.interface.Bus(
+                channel='can0', 
+                bustype='socketcan',
+                fd=True,          # Enable CAN FD
+                bitrate=500000,   # Arbitration phase bitrate (standard 500kbps)
+                data_bitrate=2000000  # Data phase bitrate (e.g., 2Mbps)
+            )
+            
+            # TODO: Connect CAN1 on the board to EVC CAN on the vehicle.
+            bus1 = can.interface.Bus(
+                channel='can1', 
+                bustype='socketcan',
+                fd=False,
+                bitrate=500000 # TODO: Make sure bitrate matches EVC CAN bus settings.
+            )
+            
+            while self.running:
+                # Read from CAN0
+                msg0 = bus0.recv(timeout=0.1)
+                if msg0:
+                    # Process the message and emit signal
+                    data = self.process_can_message(msg0)
+                    self.can0_signal.emit(data)
+                
+                # Read from CAN1
+                msg1 = bus1.recv(timeout=0.1)
+                if msg1:
+                    # Process the message and emit signal
+                    data = self.process_can_message(msg1)
+                    self.can1_signal.emit(data)
+                    
+        except Exception as e:
+            print(f"CAN reading error: {e}")
+            
+    def process_can_message(self, msg):
+        # Extract the relevant data from CAN FD message
+        # CAN FD messages can be up to 64 bytes (compared to 8 bytes in classic CAN)
+        data = {}
+        
+        if msg.arbitration_id == 0x3B8:  # touch sensor information
+            decoded_data = self.can2_db.decode_message(msg.arbitration_id, msg.data)
+            data['hands_on_signal'] = decoded_data['StrgWhlTchSnsHndsOnStat']
+        elif msg.arbitration_id == 0x501:  # front engine info
+            decoded_data = self.evc_can_db.decode_message(msg.arbitration_id, msg.data)
+            data['front_engine_temp'] = decoded_data['F_MotTmp']
+        elif msg.arbitration_id == 0x502:  # rear engine info
+            decoded_data = self.evc_can_db.decode_message(msg.arbitration_id, msg.data)
+            data['rear_engine_temp'] = decoded_data['R_MotTmp']
+        elif msg.arbitration_id == 0x504:  # battery info
+            decoded_data = self.evc_can_db.decode_message(msg.arbitration_id, msg.data)
+            data['battery_temp'] = decoded_data['RESS_Temp']
+            data['battery_SOC'] = decoded_data['RESS_SOC']
+        elif msg.arbitration_id == 0x750: # edu fault 1
+            pass
+        elif msg.arbitration_id == 0x751: # edu fault 2
+            decoded_data = self.evc_can_db.decode_message(msg.arbitration_id, msg.data)
+            data[''] = 
+            
+        elif msg_arbitration_id == 0x752: 
+            pass
+        elif msg_arbitration_id == 0x753:
+            pass
+        else:
+            # Handle other messages as needed
+            data['hands_on_signal'] = 0
+            data['battery_SOC'] = 0
+            data['battery_temp'] = 0
+            data['rear_engine_temp'] = 0
+            data['front_engine_temp'] = 0
+            
+        # elif msg.arbitration_id == 0x345:  # rear engine info
+        #     data['headway_distance'] = int.from_bytes(msg.data[0:2], byteorder='big')
+        #     data['total_acc_distance'] = int.from_bytes(msg.data[2:4], byteorder='big')
+        #     data['acc_status'] = bool(msg.data[4] & 0x01)
+            
+        return data
+    
+    def stop(self):
+        self.running = False
+        if hasattr(self, 'thread'):
+            self.thread.join(timeout=1.0)
+
+def main():
+    global active_warning
+    app = QApplication(sys.argv)
+
+    # Create the main UI window
+    window = MainWindow()
+    window.show()
+    
+    # Create CAN FD reader
+    can_reader = CANFDReader()
+    
+    # Connect signals from CAN reader to UI update methods
+    can_reader.can0_signal.connect(lambda data: update_ui_from_can0(window, data))
+    can_reader.can1_signal.connect(lambda data: update_ui_from_can1(window, data))
+    
+    # Start CAN reading in a separate thread
+    can_reader.start_reading()
+    
+    if int(input()) == 1:
+        if active_warning is None:
+            active_warning = show_warning_overlay(
+                window,
+                "img/MIL.png",  # Replace with your warning image path
+                f"WARNING: EDU ERROR"
+            )
+
+    # Make sure to clean up properly on exit
+    app.aboutToQuit.connect(can_reader.stop)
+    
+    sys.exit(app.exec())
+
+def update_ui_from_can0(window, data):
+    if 'hands_on_signal' in data and hasattr(window, 'camera_view'):
+        window.camera_view.update_hands_status(data['hands_on_signal'])
+        print(f"Hands on signal: {data['hands_on_signal']}")
+
+def update_ui_from_can1(window, data):
+    # global active_warning, last_warning_time
+    # Update UI elements based on data from CAN0
+    if 'battery_SOC' in data and hasattr(window, 'dashboard_view'):
+        window.dashboard_view.update_battery_percentage(data['battery_SOC'])
+    
+    if 'battery_temp' in data and hasattr(window, 'dashboard_view'):
+        window.dashboard_view.update_battery_temperature(data['battery_temp'])
+    
+    if 'rear_engine_temp' in data and hasattr(window, 'dashboard_view'):
+        window.dashboard_view.update_rear_engine_temperature(data['rear_engine_temp'])
+
+    if 'front_engine_temp' in data and hasattr(window, 'dashboard_view'):
+        window.dashboard_view.update_front_engine_temperature(data['front_engine_temp'])
+    # # Update UI elements based on data from CAN1
+    # if 'headway_distance' in data and hasattr(window, 'acc_view'):
+    #     window.acc_view.update_hw_distance(data['headway_distance'])
+    
+    # if 'total_acc_distance' in data and hasattr(window, 'acc_view'):
+    #     window.acc_view.update_total_acc_distance(data['total_acc_distance'])
+    
+    # if 'acc_status' in data and hasattr(window, 'acc_view'):
+    #     window.acc_view.set_acc_status(data['acc_status'])
+
+if __name__ == "__main__":
+    main()
