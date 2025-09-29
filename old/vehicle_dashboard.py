@@ -260,7 +260,7 @@ class VehicleDashboard(QMainWindow):
         self.car_display.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         
         # Load car image
-        self.car_pixmap = QPixmap("/home/uwaft/Desktop/HMI/img/lyriq.png")  # You'll need to provide this image
+        self.car_pixmap = QPixmap("img/lyriq.png")  # You'll need to provide this image
         if not self.car_pixmap.isNull():
             self.update_car_image()
         else:

@@ -8,6 +8,8 @@ from vehicle_ui import MainWindow
 import threading
 import can  
 import cantools
+from theme_tokens import _theme, ColorToken, dark_theme, creme_theme
+
 
 active_warning = None
 last_warning_time = 0
@@ -30,6 +32,11 @@ class WarningOverlay(QWidget):
             parent (QWidget, optional): Parent widget
         """
         super().__init__(parent)
+        
+        # Store message and image path for theme updates
+        self.message_text = message
+        self.image_path = image_path
+        
         # Set window flags to ensure it stays on top and covers everything
         self.setWindowFlags(Qt.WindowType.Window | 
                            Qt.WindowType.FramelessWindowHint | 
@@ -48,7 +55,27 @@ class WarningOverlay(QWidget):
         
         # Create image label
         self.image_label = QLabel()
-        pixmap = QPixmap(image_path)
+        self.setup_image()
+        
+        # Create message label with larger text
+        self.message_label = QLabel(message)
+        font = QFont()
+        font.setPointSize(24)  # Increase font size
+        font.setBold(True)
+        self.message_label.setFont(font)
+        self.message_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.message_label.setWordWrap(True)
+        
+        # Add widgets to layout
+        layout.addWidget(self.image_label)
+        layout.addWidget(self.message_label)
+        
+        # Apply initial theme
+        self.updateTheme()
+        
+    def setup_image(self):
+        """Setup the warning image"""
+        pixmap = QPixmap(self.image_path)
         if not pixmap.isNull():
             # Scale the image to a larger size while maintaining aspect ratio
             pixmap = pixmap.scaled(400, 400, Qt.AspectRatioMode.KeepAspectRatio, 
@@ -57,27 +84,32 @@ class WarningOverlay(QWidget):
             self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         else:
             self.image_label.setText("Warning Image Not Found")
-            self.image_label.setStyleSheet("color: black; font-size: 32px;")
             self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        
-        # Create message label with larger text
-        self.message_label = QLabel(message)
-        font = QFont()
-        font.setPointSize(24)  # Increase font size
-        font.setBold(True)
-        self.message_label.setFont(font)
-        self.message_label.setStyleSheet("color: black;")
-        self.message_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.message_label.setWordWrap(True)
-        
-        # Add widgets to layout
-        layout.addWidget(self.image_label)
-        layout.addWidget(self.message_label)
-        
-        # Set bright yellow background
-        self.setStyleSheet("background-color: #FFDD00;")  # Bright yellow
-        
     
+    def updateTheme(self):
+        """Update colors when theme changes - THIS IS THE KEY FIX"""
+        print("Updating warning overlay theme...")
+        
+        # Update text color
+        warning_text = _theme.get_hex(ColorToken.TEXT_PRIMARY)
+        self.message_label.setStyleSheet(f"color: {warning_text};")
+        
+        # Update background color
+        warning_background = _theme.get_hex(ColorToken.BACKGROUND)
+        self.setStyleSheet(f"background-color: {warning_background};")
+        
+        # Update image label style for "not found" text if needed
+        if self.image_label.pixmap() is None:
+            self.image_label.setStyleSheet(f"color: {warning_text}; font-size: 32px;")
+        
+        # FORCE the UI to update immediately
+        self.message_label.update()
+        self.image_label.update()
+        self.update()
+        self.repaint()
+        
+        print(f"Warning overlay updated - text color: {warning_text}, bg color: {warning_background}")
+        
     def showFullScreen(self):
         """Show the overlay in full screen mode, covering everything"""
         # Get screen geometry to cover entire screen
@@ -107,6 +139,8 @@ class WarningOverlay(QWidget):
     
     def closeEvent(self, event):
         """Normal closing"""
+        global active_warning
+        active_warning = None
         event.accept()
         
 def show_warning_overlay(main_window, image_path, message):
@@ -138,8 +172,8 @@ class CANFDReader(QObject):
     def __init__(self):
         super().__init__()
         self.running = True
-        self.can2_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/GM_GB_DWCAN2.dbc')
-        self.evc_can_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/EVC_DataLogging_Rev3_EDITED_Rev2.dbc')
+        self.can2_db = cantools.database.load_file('GM_GB_DWCAN2.dbc')
+        self.evc_can_db = cantools.database.load_file('EVC_DataLogging_Rev3_EDITED_Rev2.dbc')
 
     def start_reading(self):
         # Start the CAN reading thread
@@ -264,38 +298,38 @@ def update_ui_from_can0(window, data):
             if data['751_FEDU'] != 0 and data['751_REDU'] == 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU03 \n Front EDU is fully derated."
                 )
             if data['751_FEDU'] == 0 and data['751_REDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU04 \n Rear EDU is fully derated."
                 )
             if data['751_FEDU'] != 0 and data['751_REDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU03 and EDU04 \n Both EDUs are fully derated."
                 )
         elif '750_FEDU' in data:
             if data['750_FEDU'] != 0 and data['750_REDU'] == 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU01 \n Front EDU is inside the 10 deg C team-added derating temperature zone and driver command torque is not being met by the combined system for > 10s."
                 )
             if data['750_FEDU'] == 0 and data['750_REDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU02 \n Rear EDU is inside the 10 deg C team-added derating temperature zone and driver command torque is not being met by the combined system for > 10s."
                 )
             if data['750_FEDU'] != 0 and data['750_REDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE EDU01 and EDU02 \n Both EDUs are inside the 10 deg C team-added derating temperature zone and driver command torque is not being met by the combined system for > 10s."
                 )
         
@@ -303,32 +337,32 @@ def update_ui_from_can0(window, data):
             if data['HVFault'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE HV01 \n A ground fault has been detected."
                 )
         if 'LossComms_VICM' in data:
             if data['LossComms_VICM'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE COMM01 \n PSC has lost communication with VICM."
                 )
             elif data['LossComms_EBCM'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE COMM02 \n PSC has lost communication with EBCM."
                 )
             elif data['LossComms_F_EDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE COMM03 \n PSC has lost communication with the front EDU."
                 )
             elif data['LossComms_R_EDU'] != 0:
                 active_warning = show_warning_overlay(
                     window,
-                    "/home/uwaft/Desktop/HMI/img/MIL.png",  # Replace with your warning image path
+                    "img/MIL.png",  # Replace with your warning image path
                     f"FAULT CODE COMM04 \n PSC has lost communication with rear EDU."
                 )
             
@@ -346,6 +380,6 @@ def update_ui_from_can0(window, data):
     
     if 'powerflow' in data and hasattr(window, 'dashboard_view'):
         window.dashboard_view.update_powerflow(data['powerflow'])
-    
+
 if __name__ == "__main__":
     main()

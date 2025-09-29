@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QH
                              QLabel, QFrame, QPushButton, QSizePolicy)
 from PyQt6.QtGui import QPixmap, QFont, QColor, QPainter, QPen, QBrush
 from PyQt6.QtCore import Qt, QTimer, pyqtSlot, QSize, pyqtSignal, QPropertyAnimation
-
+from theme_tokens import _theme, ColorToken, dark_theme, creme_theme
 
 class ACCView(QWidget):
     """Adaptive Cruise Control View"""
@@ -45,8 +45,8 @@ class ACCView(QWidget):
         toggle_layout = QHBoxLayout(toggle_container)
         
         # DYNO test label
-        dyno_label = QLabel("DYNO Test")
-        dyno_label.setFont(QFont("Arial", 14))
+        self.dyno_label = QLabel("DYNO Test")
+        self.dyno_label.setFont(QFont("Arial", 14))
         
         # Create normal button instead of toggle switch
         self.dyno_button = QPushButton("Start Test")
@@ -70,7 +70,7 @@ class ACCView(QWidget):
         
         # Add to layout with some spacing
         toggle_layout.addStretch()
-        toggle_layout.addWidget(dyno_label)
+        toggle_layout.addWidget(self.dyno_label)
         toggle_layout.addWidget(self.dyno_button)
         toggle_layout.addStretch()
         
@@ -82,6 +82,62 @@ class ACCView(QWidget):
         # Update initial states
         self.update_acc(True)
         self.update_traffic_light("Yellow")
+    
+    def updateTheme(self):
+        """Update text colors and basic styling when theme changes - called from vehicle_ui.py"""
+        print("Updating ACC view theme")
+        
+        # Update text label colors
+        text_color = _theme.get_hex(ColorToken.TEXT_PRIMARY)
+        
+        if hasattr(self, 'total_acc_dist'):
+            self.total_acc_dist.setStyleSheet(f"color: {text_color}; font-weight: bold;")
+        
+        if hasattr(self, 'car_dist'):
+            self.car_dist.setStyleSheet(f"color: {text_color}; font-weight: bold;")
+        
+        if hasattr(self, 'traffic_status'):
+            self.traffic_status.setStyleSheet(f"color: {text_color}; font-weight: bold;")
+        
+        if hasattr(self, 'dyno_label'):
+            self.dyno_label.setStyleSheet(f"color: {text_color};")
+        
+        # Update frame backgrounds
+        if hasattr(self, 'car_stat'):
+            self.car_stat.setStyleSheet(f"""
+                #acc_car-stat {{
+                    background-color: {_theme.get_hex(ColorToken.BOX)};
+                    border-radius: 10px;
+                    border: 1px solid {_theme.get_hex(ColorToken.BORDER)};
+                }}
+            """)
+        
+        if hasattr(self, 'traffic_stat'):
+            self.traffic_stat.setStyleSheet(f"""
+                #traffic-stat {{
+                    background-color: {_theme.get_hex(ColorToken.BOX)};
+                    border-radius: 10px;
+                    border: 1px solid {_theme.get_hex(ColorToken.BORDER)};
+                }}
+            """)
+        
+        # Update DYNO button if not active (keep red when active)
+        if hasattr(self, 'dyno_button') and not self.dyno_active:
+            self.dyno_button.setStyleSheet(f"""
+                QPushButton {{
+                    background-color: {_theme.get_hex(ColorToken.BOX)};
+                    color: {_theme.get_hex(ColorToken.TEXT_PRIMARY)};
+                    border-radius: 8px;
+                    border: 1px solid {_theme.get_hex(ColorToken.BORDER)};
+                    padding: 6px;
+                }}
+                QPushButton:hover {{
+                    background-color: {_theme.get_hex(ColorToken.ACCENT)};
+                }}
+                QPushButton:pressed {{
+                    background-color: {_theme.get_hex(ColorToken.BORDER)};
+                }}
+            """)
     
     def toggle_dyno_test(self):
         """Toggle DYNO test state with normal button"""
@@ -108,20 +164,25 @@ class ACCView(QWidget):
             # Add your DYNO test start code here
         else:
             self.dyno_button.setText("Start Test")
-            self.dyno_button.setStyleSheet("""
-                QPushButton {
-                    background-color: #f0f0f0;
-                    border-radius: 8px;
-                    border: 1px solid #d0d0d0;
-                    padding: 6px;
-                }
-                QPushButton:hover {
-                    background-color: #e0e0e0;
-                }
-                QPushButton:pressed {
-                    background-color: #c0c0c0;
-                }
-            """)
+            # Call updateTheme to set proper button styling
+            if hasattr(self, 'updateTheme'):
+                self.updateTheme()
+            else:
+                # Fallback to original styling
+                self.dyno_button.setStyleSheet("""
+                    QPushButton {
+                        background-color: #f0f0f0;
+                        border-radius: 8px;
+                        border: 1px solid #d0d0d0;
+                        padding: 6px;
+                    }
+                    QPushButton:hover {
+                        background-color: #e0e0e0;
+                    }
+                    QPushButton:pressed {
+                        background-color: #c0c0c0;
+                    }
+                """)
             print("DYNO test deactivated")
             # Add your DYNO test stop code here
             
@@ -212,9 +273,9 @@ class ACCView(QWidget):
         try:
             # Try to load SVG file based on color
             if self.traffic_light_seen:
-                filename = f"/home/uwaft/Desktop/HMI/img/acc/Traffic_lights_dark_{color.lower()}.svg"
+                filename = f"img/acc/Traffic_lights_dark_{color.lower()}.svg"
             else:
-                filename = "/home/uwaft/Desktop/HMI/img/acc/Traffic_lights_dark_all-off.svg"
+                filename = "img/acc/Traffic_lights_dark_all-off.svg"
                 
             # Handle both relative and absolute paths
             if not os.path.exists(filename):
@@ -248,9 +309,9 @@ class ACCView(QWidget):
         try:
             # Try to load SVG file based on ACC state
             if enabled:
-                filename = "/home/uwaft/Desktop/HMI/img/acc/acc_car.svg"
+                filename = "img/acc/acc_car.svg"
             else:
-                filename = "/home/uwaft/Desktop/HMI/img/acc/disabled-acc-car.svg"
+                filename = "img/acc/disabled-acc-car.svg"
             
             # Handle both relative and absolute paths
             if not os.path.exists(filename):

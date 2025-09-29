@@ -123,25 +123,25 @@ class MainWindow(QMainWindow):
         sidebar_layout.addItem(top_spacer)
         
         # Home button
-        self.home_btn = NavButton("/home/uwaft/Desktop/HMI/img/icons/home-white.svg", "/home/uwaft/Desktop/HMI/img/icons/home-black.svg")
+        self.home_btn = NavButton("img/icons/home-white.svg", "img/icons/home-black.svg")
         self.home_btn.clicked.connect(lambda: self.change_view(0))
         sidebar_layout.addWidget(self.home_btn)
         self.nav_buttons.append(self.home_btn)
         
         # ACC button
-        self.acc_btn = NavButton("/home/uwaft/Desktop/HMI/img/icons/acc-white.svg", "/home/uwaft/Desktop/HMI/img/icons/acc-black.svg")
+        self.acc_btn = NavButton("img/icons/acc-white.svg", "img/icons/acc-black.svg")
         # self.acc_btn.clicked.connect(lambda: self.change_view(1))
         sidebar_layout.addWidget(self.acc_btn)
         self.nav_buttons.append(self.acc_btn)
         
         # Camera button
-        self.camera_btn = NavButton("/home/uwaft/Desktop/HMI/img/icons/camera-white.svg", "/home/uwaft/Desktop/HMI/img/icons/camera-black.svg")
+        self.camera_btn = NavButton("img/icons/camera-white.svg", "img/icons/camera-black.svg")
         self.camera_btn.clicked.connect(lambda: self.change_view(2))
         sidebar_layout.addWidget(self.camera_btn)
         self.nav_buttons.append(self.camera_btn)
         
         # Parking button
-        self.parking_btn = NavButton("/home/uwaft/Desktop/HMI/img/icons/parking-white.svg", "/home/uwaft/Desktop/HMI/img/icons/parking-black.svg")
+        self.parking_btn = NavButton("img/icons/parking-white.svg", "img/icons/parking-black.svg")
         # self.parking_btn.clicked.connect(lambda: self.change_view(3))
         sidebar_layout.addWidget(self.parking_btn)
         self.nav_buttons.append(self.parking_btn)

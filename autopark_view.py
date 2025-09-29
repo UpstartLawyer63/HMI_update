@@ -4,6 +4,8 @@ from PyQt6.QtCore import Qt, QTimer, pyqtSlot
 from PyQt6.QtGui import QPixmap, QIcon, QColor
 from PyQt6.QtSvg import QSvgWidget
 
+from theme_tokens import _theme, ColorToken, dark_theme, creme_theme
+
 class ParkView(QWidget):
     def __init__(self, parent=None):
         super(ParkView, self).__init__(parent)
@@ -305,3 +307,9 @@ class ParkView(QWidget):
     def cancel_auto_park(self):
         """Handler for Cancel button click"""
         self.update_auto_park("AVAILABLE")
+
+# Compatibility alias: allow importing AutoparkView even though class is ParkView
+try:
+    AutoparkView = ParkView
+except NameError:
+    pass

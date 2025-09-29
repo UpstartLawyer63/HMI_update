@@ -16,8 +16,8 @@ class CANFDReader(QObject):
     def __init__(self):
         super().__init__()
         self.running = True
-        self.can2_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/GM_GB_DWCAN2.dbc')
-        self.evc_can_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/EVC_DataLogging_Rev3_EDITED.dbc')
+        self.can2_db = cantools.database.load_file('GM_GB_DWCAN2.dbc')
+        self.evc_can_db = cantools.database.load_file('EVC_DataLogging_Rev3_EDITED.dbc')
 
     def start_reading(self):
         # Start the CAN reading thread

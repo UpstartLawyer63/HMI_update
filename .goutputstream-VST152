@@ -8,6 +8,7 @@ from warning_overlay import show_warning_overlay
 import threading
 import can  
 import cantools
+from theme_tokens import _theme, ColorToken, dark_theme, creme_theme
 
 active_warning = None
 last_warning_time = 0
@@ -20,8 +21,8 @@ class CANFDReader(QObject):
     def __init__(self):
         super().__init__()
         self.running = True
-        self.can2_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/GM_GB_DWCAN2.dbc')
-        self.evc_can_db = cantools.database.load_file('/home/uwaft/Desktop/HMI/EVC_DataLogging_Rev3_EDITED_Rev2.dbc')
+        self.can2_db = cantools.database.load_file('GM_GB_DWCAN2.dbc')
+        self.evc_can_db = cantools.database.load_file('EVC_DataLogging_Rev3_EDITED_Rev2.dbc')
 
     def start_reading(self):
         # Start the CAN reading thread
@@ -88,7 +89,7 @@ class CANFDReader(QObject):
             pass
         elif msg.arbitration_id == 0x751: # edu fault 2
             decoded_data = self.evc_can_db.decode_message(msg.arbitration_id, msg.data)
-            data[''] = 
+            # data[''] = 0 #???
             
         elif msg_arbitration_id == 0x752: 
             pass
